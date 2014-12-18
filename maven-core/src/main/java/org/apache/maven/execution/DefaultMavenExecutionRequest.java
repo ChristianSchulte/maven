@@ -165,6 +165,8 @@ public class DefaultMavenExecutionRequest
 
     private Map<String, Object> data;
 
+    private boolean useLegacyReactorResolution = false;
+
     public DefaultMavenExecutionRequest()
     {
     }
@@ -209,6 +211,7 @@ public class DefaultMavenExecutionRequest
         copy.setNoSnapshotUpdates( original.isNoSnapshotUpdates() );
         copy.setExecutionListener( original.getExecutionListener() );
         copy.setUseLegacyLocalRepository( original.isUseLegacyLocalRepository() );
+        copy.setUseLegacyReactorResolution( original.isUseLegacyReactorResolution() );
         copy.setBuilderId( original.getBuilderId() );
         return copy;
     }
@@ -1221,6 +1224,17 @@ public class DefaultMavenExecutionRequest
     }
 
     @Override
+    public boolean isUseLegacyReactorResolution()
+    {
+        return this.useLegacyReactorResolution;
+    }
+
+    public MavenExecutionRequest setUseLegacyReactorResolution( boolean value )
+    {
+        this.useLegacyReactorResolution = value;
+        return this;
+    }
+
     public MavenExecutionRequest setBuilderId( String builderId )
     {
         this.builderId = builderId;
