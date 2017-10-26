@@ -83,7 +83,7 @@ public class DefaultPluginDependenciesResolver
 
     private static final String DEFAULT_PREREQUISITES = "2";
 
-    private static final ComparableVersion DEFAULT_RESULTION_PREREQUISITES = new ComparableVersion( "3" );
+    private static final ComparableVersion DEFAULT_RESULTION_PREREQUISITES = new ComparableVersion( "2" );
 
     @Requirement
     private Logger logger;
